@@ -12,13 +12,23 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e",
+          "build-storybook"
+        ]
+      }
     }
   },
   "projects": {
     "test": { "tags": [] },
     "test-e2e": { "tags": [], "implicitDependencies": ["test"] },
     "ui-react": { "tags": [] },
-    "ui-test": { "tags": [] }
+    "ui-test": { "tags": [] },
+    "ui-test-e2e": { "tags": [], "implicitDependencies": ["ui-test"] },
+    "ui-react-e2e": { "tags": [], "implicitDependencies": ["ui-react"] }
   }
 }
