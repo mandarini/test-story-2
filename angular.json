@@ -29,6 +29,11 @@
     },
     "@nrwl/angular:component": {
       "style": "css"
+    },
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
     }
   },
   "projects": {
@@ -139,6 +144,52 @@
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/test-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ui-react": {
+      "root": "libs/ui-react",
+      "sourceRoot": "libs/ui-react/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui-react/**/*.{ts,tsx,js,jsx}"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-react"],
+          "options": {
+            "jestConfig": "libs/ui-react/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "ui-test": {
+      "projectType": "library",
+      "root": "libs/ui-test",
+      "sourceRoot": "libs/ui-test/src",
+      "prefix": "attempt-four",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-test/src/**/*.ts",
+              "libs/ui-test/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-test"],
+          "options": {
+            "jestConfig": "libs/ui-test/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

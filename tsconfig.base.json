@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@attempt-four/ui-react": ["libs/ui-react/src/index.ts"],
+      "@attempt-four/ui-test": ["libs/ui-test/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
